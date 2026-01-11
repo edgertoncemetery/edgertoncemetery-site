@@ -147,6 +147,7 @@
       text-decoration: underline;
     }
 
+    /* Call-to-action button */
     .cta-button {
       display: inline-block;
       margin: 14px 0 6px 0;
@@ -164,6 +165,7 @@
       background-color: #1f2d3d;
     }
 
+    /* Surnames list */
     .surname-list {
       margin: 10px 0 0 0;
       padding-left: 18px;
@@ -206,7 +208,8 @@
       <strong>Edgerton Cemetery Maintenance Trust</strong> to help with long-term upkeep of the family cemetery.
     </p>
 
-    <a href="#contribute" class="cta-button">
+    <!-- CTA Button NOW jumps to CHECK donation callout -->
+    <a href="#check-donation" class="cta-button">
       Contribute to Maintenance and Fence Repair
     </a>
 
@@ -257,15 +260,44 @@
 
     <hr>
 
-    <h2 id="contribute">How to Contribute</h2>
+    <h2>How to Contribute</h2>
 
     <p>Contributions may be made by check payable to:</p>
-    <div class="callout">
+
+    <!-- CHECK donation callout anchor target -->
+    <div class="callout" id="check-donation">
       <p style="margin:0;">
         <strong>Edgerton Cemetery Maintenance Trust</strong><br>
         1370 Bagley Road<br>
         Kenly, NC 27542
       </p>
+    </div>
+
+    <!-- Electronic options restored -->
+    <div class="callout">
+      <p class="small" style="margin:0 0 10px 0;">
+        <strong>Optional electronic contributions:</strong> Venmo and Cash App donations may be used for convenience and are periodically transferred into the trust account for cemetery maintenance and fence repair.
+      </p>
+
+      <div class="qr-wrap">
+        <div class="qr-card">
+          <img src="jen-venmo.png" alt="Venmo QR code for Jennifer Skinner">
+          <div class="qr-label">Venmo</div>
+          <div class="qr-handle">@Jennifer-Skinner-81</div>
+          <div class="qr-link">
+            <a href="https://venmo.com/Jennifer-Skinner-81" target="_blank" rel="noopener noreferrer">Open Venmo profile</a>
+          </div>
+        </div>
+
+        <div class="qr-card">
+          <img src="marty-cashapp.png" alt="Cash App QR code for Marty Skinner">
+          <div class="qr-label">Cash App</div>
+          <div class="qr-handle">$MtDewMarty</div>
+          <div class="qr-link">
+            <a href="https://cash.app/$MtDewMarty" target="_blank" rel="noopener noreferrer">Open Cash App</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <hr>
@@ -302,6 +334,9 @@
         <li>Yelverton</li>
         <li>Several Unknown</li>
       </ul>
+      <p class="small" style="margin:12px 0 0 0;">
+        If you know additional family names associated with this cemetery, please email us so we can keep this list accurate over time.
+      </p>
     </div>
 
     <p class="footer">
