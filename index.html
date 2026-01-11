@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Edgerton Cemetery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -13,34 +14,67 @@
       margin: 0;
       padding: 0;
     }
+
+    /* Sticky header container */
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    /* The banner image */
+    .banner {
+      width: 100%;
+      max-height: 260px;     /* adjust if you want taller/shorter */
+      object-fit: cover;     /* crops nicely on different screens */
+      display: block;
+    }
+
     .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
       background: #ffffff;
     }
+
     h1, h2 {
       color: #2c3e50;
     }
+
     hr {
       margin: 30px 0;
     }
+
     .footer {
       font-size: 0.9em;
       color: #666;
     }
+
+    /* Make sure content doesn't feel cramped under the header */
+    .content-top-space {
+      padding-top: 10px;
+    }
   </style>
 </head>
+
 <body>
-  <div class="container">
+
+  <!-- Sticky image header -->
+  <div class="sticky-header">
+    <img class="banner" src="edgerton-cemetery.jpg" alt="Edgerton Cemetery entrance and grounds">
+  </div>
+
+  <div class="container content-top-space">
 
     <h1>Edgerton Cemetery</h1>
 
     <p>
-      Edgerton Cemetery is a private family cemetery located at
+      Edgerton Cemetery is a private, multi family cemetery located at
       <strong>3061 Nahunta Road, beside the Nahunta Fire Department, North Carolina</strong>.
       Established around 1940, the cemetery contains approximately 150 family burials
-      and has been cared for by family members for generations.
+      and has been cared for by family members for generations. A deed was made on the 21st of March, 1938 by and between W.F. Flowers (widower) and Cassie E. Lynch, Floyd Edgerton and Girney Edgerton, Trustees of the Edgerton Burial Ground. 
     </p>
 
     <hr>
