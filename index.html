@@ -147,7 +147,6 @@
       text-decoration: underline;
     }
 
-    /* Call-to-action button */
     .cta-button {
       display: inline-block;
       margin: 14px 0 6px 0;
@@ -163,6 +162,24 @@
 
     .cta-button:hover {
       background-color: #1f2d3d;
+    }
+
+    .surname-list {
+      margin: 10px 0 0 0;
+      padding-left: 18px;
+      columns: 2;
+      column-gap: 28px;
+    }
+
+    .surname-list li {
+      margin: 6px 0;
+      break-inside: avoid;
+    }
+
+    @media (max-width: 680px) {
+      .surname-list {
+        columns: 1;
+      }
     }
   </style>
 </head>
@@ -189,7 +206,6 @@
       <strong>Edgerton Cemetery Maintenance Trust</strong> to help with long-term upkeep of the family cemetery.
     </p>
 
-    <!-- CTA Button -->
     <a href="#contribute" class="cta-button">
       Contribute to Maintenance and Fence Repair
     </a>
@@ -252,30 +268,40 @@
       </p>
     </div>
 
+    <hr>
+
+    <h2>Families Represented</h2>
     <div class="callout">
-      <p class="small">
-        Electronic contributions are optional and are periodically transferred into the trust account.
+      <p style="margin:0;">
+        <strong>A partial list of surnames found in this cemetery includes:</strong>
       </p>
-
-      <div class="qr-wrap">
-        <div class="qr-card">
-          <img src="jen-venmo.png" alt="Venmo QR code for Jennifer Skinner">
-          <div class="qr-label">Venmo</div>
-          <div class="qr-handle">@Jennifer-Skinner-81</div>
-          <div class="qr-link">
-            <a href="https://venmo.com/Jennifer-Skinner-81" target="_blank">Open Venmo profile</a>
-          </div>
-        </div>
-
-        <div class="qr-card">
-          <img src="marty-cashapp.png" alt="Cash App QR code for Marty Skinner">
-          <div class="qr-label">Cash App</div>
-          <div class="qr-handle">$MtDewMarty</div>
-          <div class="qr-link">
-            <a href="https://cash.app/$MtDewMarty" target="_blank">Open Cash App</a>
-          </div>
-        </div>
-      </div>
+      <ul class="surname-list">
+        <li>Brock</li>
+        <li>Crawford</li>
+        <li>Denning</li>
+        <li>Dees</li>
+        <li>Devis</li>
+        <li>Dixon</li>
+        <li>Edgerton</li>
+        <li>Evans</li>
+        <li>Fields</li>
+        <li>Gilbreath</li>
+        <li>Heath</li>
+        <li>Hodgin</li>
+        <li>Hollowell</li>
+        <li>Hooks</li>
+        <li>Howell</li>
+        <li>Joyner</li>
+        <li>Laney</li>
+        <li>Langston</li>
+        <li>Lynch</li>
+        <li>Phillips</li>
+        <li>Pope</li>
+        <li>Thompson</li>
+        <li>Wilkins</li>
+        <li>Yelverton</li>
+        <li>Several Unknown</li>
+      </ul>
     </div>
 
     <p class="footer">
