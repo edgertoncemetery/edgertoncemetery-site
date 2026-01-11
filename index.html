@@ -8,14 +8,13 @@
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+      line-height: 1.65;
+      background: #f4f6f8;
+      color: #222;
       margin: 0;
       padding: 0;
     }
 
-    /* Sticky header container */
     .sticky-header {
       position: sticky;
       top: 0;
@@ -24,115 +23,199 @@
       border-bottom: 1px solid #e5e5e5;
     }
 
-    /* The banner image */
     .banner {
       width: 100%;
-      max-height: 260px;     /* adjust if you want taller/shorter */
-      object-fit: cover;     /* crops nicely on different screens */
+      max-height: 280px;
+      object-fit: cover;
       display: block;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+    .mapbar {
+      text-align: center;
+      padding: 10px 12px;
       background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
     }
 
-    h1, h2 {
+    .mapbar a {
+      display: inline-block;
+      font-size: 1.05em;
+      font-weight: 700;
       color: #2c3e50;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    .mapbar a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 26px 22px 40px 22px;
+      background: #ffffff;
+      box-shadow: 0 1px 10px rgba(0,0,0,0.06);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2.1em;
+      color: #1f2d3d;
+    }
+
+    h2 {
+      margin-top: 34px;
+      font-size: 1.45em;
+      color: #1f2d3d;
+    }
+
+    p {
+      margin: 12px 0;
     }
 
     hr {
-      margin: 30px 0;
+      margin: 26px 0;
+      border: 0;
+      height: 1px;
+      background: #e6e6e6;
+    }
+
+    .callout {
+      background: #f8fafc;
+      border: 1px solid #e6edf5;
+      padding: 14px;
+      border-radius: 10px;
+      margin: 14px 0;
+    }
+
+    .small {
+      font-size: 0.95em;
+      color: #444;
     }
 
     .footer {
-      font-size: 0.9em;
+      margin-top: 30px;
+      font-size: 0.95em;
       color: #666;
-    }
-
-    /* Make sure content doesn't feel cramped under the header */
-    .content-top-space {
-      padding-top: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Sticky image header -->
   <div class="sticky-header">
     <img class="banner" src="edgerton-cemetery.jpg" alt="Edgerton Cemetery entrance and grounds">
   </div>
 
-  <div class="container content-top-space">
+  <div class="mapbar">
+    <a href="https://maps.app.goo.gl/pktfgiJxMnVhFuZ89" target="_blank" rel="noopener noreferrer">
+      📍 View Edgerton Cemetery on Google Maps
+    </a>
+  </div>
+
+  <div class="container">
 
     <h1>Edgerton Cemetery</h1>
 
     <p>
-      Edgerton Cemetery is a private, multi family cemetery located at
+      Edgerton Cemetery is a private, multi-family cemetery located at
       <strong>3061 Nahunta Road, beside the Nahunta Fire Department, North Carolina</strong>.
-      Established around 1940, the cemetery contains approximately 150 family burials
-      and has been cared for by family members for generations. A deed was made on the 21st of March, 1938 by and between W.F. Flowers (widower) and Cassie E. Lynch, Floyd Edgerton and Girney Edgerton, Trustees of the Edgerton Burial Ground. 
+    </p>
+
+    <div class="callout">
+      <p class="small">
+        The cemetery was formally established through a deed dated <strong>March 21, 1938</strong>,
+        in which <strong>W. F. Flowers (widower)</strong> conveyed land to
+        <strong>Cassie E. Lynch, Floyd Edgerton, and Girney Edgerton</strong>, who were named as
+        <strong>Trustees of the Edgerton Burial Ground</strong>. This reflects the original intent
+        that the land be held in trust for burial purposes and cared for on behalf of the families
+        connected to this burial ground.
+      </p>
+    </div>
+
+    <p>
+      Established around <strong>1940</strong>, the cemetery contains approximately <strong>150</strong>
+      burials and has been cared for by family members across generations.
     </p>
 
     <hr>
 
     <h2>Purpose</h2>
+
     <p>
-      The Edgerton Cemetery Maintenance Trust was established to help ensure the
-      long-term care, mowing, and preservation of the cemetery so that upkeep does
-      not fall on any one individual.
+      The <strong>Edgerton Cemetery Maintenance Trust</strong> was established to help ensure the
+      long-term care, mowing, and preservation of the cemetery so that upkeep does not fall on any
+      one individual.
     </p>
 
     <p>
-      Contributions are voluntary and are used solely for routine maintenance and
-      preservation of the cemetery.
+      Contributions are voluntary and are used solely for routine maintenance and preservation
+      of the cemetery.
+    </p>
+
+    <hr>
+
+    <h2>Families Represented</h2>
+
+    <p>
+      Edgerton Cemetery serves as the final resting place for members of multiple interconnected
+      families. Some of which surnames follow:
+    </p>
+
+    <div class="callout small">
+      <strong>
+        Brock, Crawford, Dees, Denning, Devis, Dixon, Edgerton, Evans, Fields, Gilbreath,
+        Heath, Hodgin, Hollowell, Hooks, Howell, Joyner, Laney, Langston, Lynch,
+        Phillips, Pope, Thompson, Wilkins, Yelverton, Several Unknown
+      </strong>
+    </div>
+
+    <p class="small">
+      This list is not intended to be exhaustive and will be expanded over time as records are
+      reviewed and family members contribute information.
     </p>
 
     <hr>
 
     <h2>How to Contribute</h2>
-    <p>
-      Contributions may be made by check payable to:
-    </p>
 
-    <p>
-      <strong>Edgerton Cemetery Maintenance Trust</strong><br>
-      (Mailing address to be added)
-    </p>
+    <p>Contributions may be made by check payable to:</p>
 
-    <p>
-      Online contribution options may be added in the future for convenience.
-    </p>
+    <div class="callout">
+      <p style="margin:0;">
+        <strong>Edgerton Cemetery Maintenance Trust</strong><br>
+        1370 Bagley Road<br>
+        Kenly, NC&nbsp;27542
+      </p>
+    </div>
 
     <hr>
 
     <h2>In Lieu of Flowers</h2>
+
     <p>
       In lieu of flowers, families may choose to make a small contribution to the
-      Edgerton Cemetery Maintenance Trust to help with long-term upkeep of the
-      family cemetery.
+      <strong>Edgerton Cemetery Maintenance Trust</strong> to help with long-term upkeep
+      of the family cemetery.
     </p>
 
     <hr>
 
     <h2>Contact</h2>
-    <p>
-      For questions or information regarding cemetery maintenance:
-    </p>
 
-    <p>
-      <strong>Email:</strong> (contact email to be added)<br>
-      <strong>Trustees:</strong> Sonny Edgerton, Jennifer [Last Name]
-    </p>
-
-    <hr>
+    <div class="callout">
+      <p style="margin:0;">
+        <strong>Email:</strong> jen_skinner1@yahoo.com<br>
+        <strong>Trustees:</strong> Sonny Edgerton, Jennifer Skinner
+      </p>
+    </div>
 
     <p class="footer">
-      This website is provided for informational purposes only.
-      Edgerton Cemetery is a private family cemetery.
+      This website is provided for informational purposes only. Edgerton Cemetery is a private
+      family cemetery. Contributions are voluntary and intended solely for cemetery maintenance
+      and preservation.
     </p>
 
   </div>
