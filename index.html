@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Edgerton Cemetery</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Optional: helps search/share previews -->
-  <meta name="description" content="Edgerton Cemetery (Nahunta Road, NC) — information and ways to contribute to maintenance and fence repair.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
+    :root{
+      --purple-900:#2a0a4a;
+      --purple-800:#3a0f66;
+      --purple-700:#4b1680;
+      --purple-200:#e9dcff;
+      --purple-100:#f4edff;
+
+      --ink:#1f2d3d;
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --line:#e6e6e6;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.65;
-      background: #f2edf7; /* soft memorial lavender */
+      background: linear-gradient(180deg, var(--purple-100), var(--bg) 55%);
       color: #222;
       margin: 0;
       padding: 0;
     }
 
+    /* Sticky top image */
     .sticky-header {
       position: sticky;
       top: 0;
       z-index: 999;
       background: #ffffff;
-      border-bottom: 1px solid #d9cfe6;
+      border-bottom: 1px solid #e5e5e5;
     }
 
     .banner {
@@ -33,46 +44,45 @@
       display: block;
     }
 
+    /* Map link bar */
     .mapbar {
       text-align: center;
       padding: 10px 12px;
       background: #ffffff;
-      border-bottom: 1px solid #d9cfe6;
+      border-bottom: 1px solid #e5e5e5;
     }
 
     .mapbar a {
       display: inline-block;
       font-size: 1.05em;
       font-weight: 700;
-      color: #5a2d82; /* deep memorial purple */
+      color: var(--purple-800);
       text-decoration: none;
       padding: 8px 12px;
       border-radius: 8px;
     }
+    .mapbar a:hover { text-decoration: underline; }
 
-    .mapbar a:hover {
-      text-decoration: underline;
-    }
-
+    /* Page container */
     .container {
       max-width: 900px;
       margin: 0 auto;
       padding: 26px 22px 40px 22px;
-      background: #ffffff;
-      box-shadow: 0 2px 14px rgba(90,45,130,0.12);
-      border-radius: 14px; /* subtle softness */
+      background: var(--card);
+      box-shadow: 0 1px 10px rgba(0,0,0,0.06);
+      border-top: 4px solid var(--purple-700);
     }
 
     h1 {
       margin-top: 0;
       font-size: 2.1em;
-      color: #4b236a; /* heading purple */
+      color: var(--ink);
     }
 
     h2 {
       margin-top: 34px;
       font-size: 1.45em;
-      color: #4b236a;
+      color: var(--ink);
     }
 
     p { margin: 12px 0; }
@@ -81,12 +91,12 @@
       margin: 26px 0;
       border: 0;
       height: 1px;
-      background: #e2d9ee;
+      background: var(--line);
     }
 
     .callout {
-      background: #faf7fc;
-      border: 1px solid #e2d9ee;
+      background: #faf7ff;
+      border: 1px solid #eadcff;
       padding: 14px;
       border-radius: 10px;
       margin: 14px 0;
@@ -103,6 +113,7 @@
       color: #666;
     }
 
+    /* Donation QR cards */
     .qr-wrap {
       display: flex;
       gap: 22px;
@@ -122,14 +133,14 @@
       max-width: 100%;
       height: auto;
       border-radius: 10px;
-      border: 1px solid #e2d9ee;
+      border: 1px solid #e6edf5;
       background: #fff;
     }
 
     .qr-label {
       margin-top: 10px;
       font-weight: 700;
-      color: #4b236a;
+      color: var(--ink);
     }
 
     .qr-handle {
@@ -144,29 +155,26 @@
       margin-top: 8px;
       font-weight: 700;
       text-decoration: none;
-      color: #5a2d82;
+      color: var(--purple-800);
     }
-
-    .qr-link a:hover {
-      text-decoration: underline;
-    }
+    .qr-link a:hover { text-decoration: underline; }
 
     /* Call-to-action button */
     .cta-button {
       display: inline-block;
       margin: 14px 0 6px 0;
       padding: 12px 18px;
-      background-color: #5a2d82; /* memorial purple */
+      background: linear-gradient(180deg, var(--purple-700), var(--purple-800));
       color: #ffffff;
       font-size: 1.05em;
       font-weight: 700;
       text-decoration: none;
       border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(90,45,130,0.30);
+      box-shadow: 0 2px 8px rgba(58,15,102,0.25);
     }
 
     .cta-button:hover {
-      background-color: #4b236a;
+      filter: brightness(0.95);
     }
 
     /* Surnames list */
@@ -183,39 +191,58 @@
     }
 
     @media (max-width: 680px) {
-      .surname-list {
-        columns: 1;
-      }
+      .surname-list { columns: 1; }
     }
 
-    /* ✅ FIX: ensure anchor scroll doesn't hide section behind sticky banner */
+    /* Anchor scroll fix: don't hide behind sticky image */
     #check-donation {
       scroll-margin-top: 320px; /* banner + map bar height */
     }
-
     @media (max-width: 680px) {
-      #check-donation {
-        scroll-margin-top: 360px; /* a bit more room on mobile */
-      }
+      #check-donation { scroll-margin-top: 360px; }
     }
 
-    /* Optional: a subtle memorial ribbon under the H1 */
-    .memorial-ribbon {
-      display: inline-block;
-      margin: 6px 0 6px 0;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f1e9fb, #ffffff);
-      border: 1px solid #e2d9ee;
-      color: #5a2d82;
-      font-weight: 700;
-      font-size: 0.95em;
+    /* Memory + Gene photo */
+    .memory-note{
+      text-align:center;
+      margin: 10px 0 0 0;
+      font-size: 1.02em;
+    }
+    .name-highlight{
+      font-weight: 800;
+      color: var(--purple-900);
+      padding: 0 3px;
+      border-bottom: 2px solid var(--purple-200);
+    }
+    .gene-photo-wrap{
+      display:flex;
+      justify-content:center;
+      margin: 14px 0 2px 0;
+    }
+    .gene-photo{
+      width: 260px;
+      max-width: 85%;
+      height: auto;
+      border-radius: 14px;
+      border: 2px solid var(--purple-200);
+      box-shadow: 0 6px 18px rgba(42,10,74,0.15);
+      background:#fff;
     }
 
-    /* Optional: nicer link look in body text */
-    .container a:not(.cta-button):not(.mapbar a) {
-      color: #5a2d82;
+    /* PDF links */
+    .doc-list{
+      margin: 10px 0 0 0;
+      padding-left: 18px;
     }
+    .doc-list li{
+      margin: 8px 0;
+    }
+    .doc-list a{
+      font-weight: 800;
+      color: var(--purple-800);
+      text-decoration: none;
+    }
+    .doc-list a:hover{ text-decoration: underline; }
   </style>
 </head>
 
@@ -234,7 +261,6 @@
   <div class="container">
 
     <h1>Edgerton Cemetery</h1>
-    <div class="memorial-ribbon">In loving remembrance • Purple theme in honor of a beloved family member</div>
 
     <h2 style="margin-top: 18px;">In Lieu of Flowers</h2>
     <p>
@@ -253,6 +279,22 @@
         <strong>Email:</strong> jen_skinner1@yahoo.com<br>
         <strong>Caretakers (day-to-day):</strong> Sonny Edgerton, Jennifer Skinner<br>
         <strong>Trustees (oversight):</strong> Sonny Edgerton, Jennifer Skinner, Marty Skinner
+      </p>
+    </div>
+
+    <!-- Memory dedication + Gene photo -->
+    <div class="callout">
+      <p class="memory-note" style="margin:0;">
+        This page is dedicated to loving memory of both the late Ralph Eugene Edgerton — <span class="name-highlight">Gene</span>
+        and the late Mrs. Girney Edgerton — <span class="name-highlight">Mary</span>.
+      </p>
+
+      <div class="gene-photo-wrap">
+        <img class="gene-photo" src="Gene-Edgerton.jpg" alt="Ralph Eugene Edgerton (Gene)">
+      </div>
+
+      <p class="small" style="margin:10px 0 0 0; text-align:center;">
+        The photo and documents below are shared for informational purposes to help preserve family history and cemetery stewardship.
       </p>
     </div>
 
@@ -373,15 +415,44 @@
       </p>
     </div>
 
+    <hr>
+
+    <h2>Original Documents (Informational Only)</h2>
+    <div class="callout">
+      <p style="margin:0 0 10px 0;">
+        The following are original documents and historical lists shared for family reference and preservation.
+        If you can provide more information, corrections, or would like to offer support with maintenance and upkeep,
+        please contact the caretakers listed above.
+      </p>
+
+      <ul class="doc-list">
+        <li>
+          <a href="Orignial-Deed-Edgerton-Cemetery.PDF" target="_blank" rel="noopener noreferrer">
+            Original Deed – Edgerton Cemetery (PDF)
+          </a>
+        </li>
+        <li>
+          <a href="Edgerton-Cemetery-name-list-1.PDF" target="_blank" rel="noopener noreferrer">
+            Edgerton Cemetery Name List – Part 1 (PDF)
+          </a>
+        </li>
+        <li>
+          <a href="Edgerton-Cemetery-name-list2.PDF" target="_blank" rel="noopener noreferrer">
+            Edgerton Cemetery Name List – Part 2 (PDF)
+          </a>
+        </li>
+      </ul>
+
+      <p class="small" style="margin:12px 0 0 0;">
+        <strong>Note:</strong> We understand there are additional individuals buried here who were never documented in the available records.
+        If you have information that can help complete the history, please reach out.
+      </p>
+    </div>
+
     <p class="footer">
       This website is provided for informational purposes only. Edgerton Cemetery is a private
       family cemetery. Contributions are voluntary and intended solely for cemetery maintenance
       and preservation.
-      <br><br>
-      <em>
-        This page is dedicated to the loving memory of both the late Ralph Eugene Edgerton —
-        <strong>Gene</strong> and the late Mrs. Girney Edgerton — <strong>Mary</strong>.
-      </em>
     </p>
 
   </div>
