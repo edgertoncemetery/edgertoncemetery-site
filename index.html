@@ -16,6 +16,7 @@
       --purple-200:#e9dcff;
       --purple-150:#f1e9ff;
       --purple-100:#f7f2ff;
+
       --ink:#1f2d3d;
       --bg:#f4f6f8;
       --card:#ffffff;
@@ -58,12 +59,14 @@
     .mapbar a {
       display: inline-block;
       font-size: 1.05em;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--purple-800);
       text-decoration: none;
       padding: 8px 12px;
       border-radius: 10px;
     }
+
+    .mapbar a:hover { text-decoration: underline; }
 
     .container {
       max-width: 900px;
@@ -80,12 +83,22 @@
       margin-top: 0;
       font-size: 2.1em;
       color: var(--purple-950);
+      margin-bottom: 6px;
     }
 
     h2 {
       margin-top: 34px;
       font-size: 1.45em;
       color: var(--purple-900);
+    }
+
+    p { margin: 12px 0; }
+
+    hr {
+      margin: 26px 0;
+      border: 0;
+      height: 1px;
+      background: var(--line);
     }
 
     .design-note{
@@ -103,6 +116,17 @@
       font-weight: 900;
     }
 
+    .callout {
+      background: linear-gradient(180deg, #fbf8ff, #f6f0ff);
+      border: 1px solid var(--purple-200);
+      padding: 14px;
+      border-radius: 12px;
+      margin: 14px 0;
+    }
+
+    .small { font-size: 0.95em; color: #333; }
+
+    /* Call-to-action button */
     .cta-button {
       display: inline-block;
       margin: 14px 0 6px 0;
@@ -116,19 +140,13 @@
       box-shadow: 0 10px 18px rgba(58,15,102,0.22);
     }
 
-    .callout {
-      background: linear-gradient(180deg, #fbf8ff, #f6f0ff);
-      border: 1px solid var(--purple-200);
-      padding: 14px;
-      border-radius: 12px;
-      margin: 14px 0;
-    }
+    .cta-button:hover { filter: brightness(0.95); }
 
+    /* ✅ Anchor spacing so scroll lands nicely */
     #check-donation { scroll-margin-top: 340px; }
 
-    .memorial-wrap{
-      text-align: center;
-    }
+    /* Memorial layout */
+    .memorial-wrap { text-align: center; }
 
     .name-highlight{
       font-weight: 900;
@@ -143,6 +161,7 @@
       border-radius: 16px;
       border: 3px solid var(--purple-200);
       box-shadow: 0 10px 24px rgba(27,5,51,0.18);
+      margin-top: 10px;
     }
 
     .placeholder-photo{
@@ -156,83 +175,280 @@
       justify-content:center;
       font-weight: 900;
       color: var(--purple-800);
-      margin: 0 auto;
+      margin: 10px auto 0 auto;
     }
 
+    /* QR section */
+    .qr-wrap {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: 14px;
+    }
+
+    .qr-card { text-align: center; width: 220px; }
+
+    .qr-card img {
+      width: 220px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--purple-200);
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(27,5,51,0.12);
+    }
+
+    .qr-label {
+      margin-top: 10px;
+      font-weight: 900;
+      color: var(--purple-900);
+    }
+
+    .qr-handle { margin-top: 4px; font-weight: 900; color: #222; }
+
+    .qr-link a {
+      display: inline-block;
+      margin-top: 8px;
+      font-weight: 900;
+      text-decoration: none;
+      color: var(--purple-800);
+    }
+
+    .qr-link a:hover { text-decoration: underline; }
+
+    /* Surnames list */
     .surname-list {
-      columns: 2;
+      margin: 10px 0 0 0;
       padding-left: 18px;
+      columns: 2;
+      column-gap: 28px;
     }
+    .surname-list li { margin: 6px 0; break-inside: avoid; }
+    @media (max-width: 680px) { .surname-list { columns: 1; } }
 
+    /* Docs */
+    .doc-list { margin: 10px 0 0 0; padding-left: 18px; }
     .doc-list a {
       font-weight: 900;
       color: var(--purple-800);
       text-decoration: none;
+    }
+    .doc-list a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.95em;
+      color: #555;
     }
   </style>
 </head>
 
 <body>
 
-<div class="sticky-header">
-  <img class="banner" src="edgerton-cemetery.jpg" alt="Edgerton Cemetery">
-</div>
+  <div class="sticky-header">
+    <img class="banner" src="edgerton-cemetery.jpg" alt="Edgerton Cemetery entrance and grounds">
+  </div>
 
-<div class="mapbar">
-  <a href="https://maps.app.goo.gl/pktfgiJxMnVhFuZ89" target="_blank">
-    📍 View Edgerton Cemetery on Google Maps
-  </a>
-</div>
+  <div class="mapbar">
+    <a href="https://maps.app.goo.gl/pktfgiJxMnVhFuZ89" target="_blank" rel="noopener noreferrer">
+      📍 View Edgerton Cemetery on Google Maps
+    </a>
+  </div>
 
-<div class="container">
+  <div class="container">
 
-<h1>Edgerton Cemetery</h1>
+    <h1>Edgerton Cemetery</h1>
 
-<div class="design-note">
-  💜 <strong>Design note:</strong> This website’s purple theme is in loving memory of
-  <strong>Carol Willoughby</strong>, Jennifer’s mother, who loved purple.
-</div>
+    <div class="design-note">
+      💜 <strong>Design note:</strong> This website’s purple theme is in loving memory of
+      <strong>Carol Willoughby</strong>, Jennifer’s mother, who loved purple.
+    </div>
 
-<h2>In Lieu of Flowers</h2>
-<p>
-  In lieu of flowers, families may choose to make a small contribution to the
-  <strong>Edgerton Cemetery Maintenance Trust</strong>.
-</p>
+    <h2 style="margin-top: 18px;">In Lieu of Flowers</h2>
+    <p>
+      In lieu of flowers, families may choose to make a small contribution to the
+      <strong>Edgerton Cemetery Maintenance Trust</strong> to help with long-term upkeep of the family cemetery.
+    </p>
 
-<a href="#check-donation" class="cta-button">
-  Contribute to Maintenance and Fence Repair
-</a>
+    <a href="#check-donation" class="cta-button">
+      Contribute to Maintenance and Fence Repair
+    </a>
 
-<div class="callout memorial-wrap">
-  <p>This page is dedicated to the loving memory of<br>
-    Ralph Eugene Edgerton — <span class="name-highlight">Gene</span>
-  </p>
-  <img class="gene-photo" src="Gene-Edgerton.jpg" alt="Gene Edgerton">
+    <div class="callout memorial-wrap">
+      <p style="margin:0;">
+        This page is dedicated to the loving memory of<br>
+        Ralph Eugene Edgerton — <span class="name-highlight">Gene</span>
+      </p>
 
-  <p style="margin-top:18px;">
-    And the late Mrs. Girney Edgerton — <span class="name-highlight">Mary</span>
-  </p>
-  <div class="placeholder-photo">Picture coming soon.</div>
-</div>
+      <img class="gene-photo" src="Gene-Edgerton.jpg" alt="Gene Edgerton">
 
-<h2>How to Contribute</h2>
+      <p style="margin:18px 0 0 0;">
+        And the late Mrs. Girney Edgerton — <span class="name-highlight">Mary</span>
+      </p>
 
-<div class="callout" id="check-donation">
-  <strong>Edgerton Cemetery Maintenance Trust</strong><br>
-  1370 Bagley Road<br>
-  Kenly, NC 27542
-</div>
+      <div class="placeholder-photo">Picture coming soon.</div>
 
-<h2>Original Documents (Informational Only)</h2>
-<div class="callout">
-  <ul class="doc-list">
-    <li><a href="Orignial-Deed-Edgerton-Cemetery.PDF">Original Deed</a></li>
-    <li><a href="Edgerton-Cemetery-name-list-1.PDF">Name List – Part 1</a></li>
-    <li><a href="Edgerton-Cemetery-name-list2.PDF">Name List – Part 2</a></li>
-  </ul>
-  <p><em>We know there are others buried here who were never documented.</em></p>
-</div>
+      <p class="small" style="margin:14px 0 0 0;">
+        The photo and documents below are shared for informational purposes to help preserve family history and cemetery stewardship.
+      </p>
+    </div>
 
-</div>
+    <h2>Contact</h2>
+    <div class="callout">
+      <p style="margin:0;">
+        <strong>Email:</strong> jen_skinner1@yahoo.com<br>
+        <strong>Caretakers (day-to-day):</strong> Sonny Edgerton, Jennifer Skinner<br>
+        <strong>Trustees (oversight):</strong> Sonny Edgerton, Jennifer Skinner, Marty Skinner
+      </p>
+    </div>
+
+    <hr>
+
+    <p>
+      Edgerton Cemetery is a private, multi-family cemetery located at
+      <strong>3061 Nahunta Road, beside the Nahunta Fire Department, North Carolina</strong>.
+    </p>
+
+    <div class="callout">
+      <p class="small" style="margin:0;">
+        <strong>As of 2026,</strong> the cemetery is being looked after primarily by
+        <strong>Sonny Edgerton (Nahunta)</strong> and <strong>Jennifer Skinner (Kenly)</strong>.
+      </p>
+    </div>
+
+    <div class="callout">
+      <p class="small" style="margin:0;">
+        The cemetery was formally established through a deed dated <strong>March 21, 1938</strong>,
+        in which <strong>W. F. Flowers (widower)</strong> conveyed land to
+        <strong>Cassie E. Lynch, Floyd Edgerton, and Girney Edgerton</strong>, who were named as
+        <strong>Trustees of the Edgerton Burial Ground</strong>.
+      </p>
+    </div>
+
+    <p>
+      Established around <strong>1940</strong>, the cemetery contains approximately
+      <strong>150</strong> burials and has been cared for by family members across generations.
+    </p>
+
+    <hr>
+
+    <h2>Purpose</h2>
+    <p>
+      The <strong>Edgerton Cemetery Maintenance Trust</strong> exists to ensure long-term care,
+      mowing, and preservation so upkeep does not fall on any one individual.
+    </p>
+
+    <hr>
+
+    <h2>How to Contribute</h2>
+
+    <p>Contributions may be made by check payable to:</p>
+
+    <div class="callout" id="check-donation">
+      <p style="margin:0;">
+        <strong>Edgerton Cemetery Maintenance Trust</strong><br>
+        1370 Bagley Road<br>
+        Kenly, NC 27542
+      </p>
+    </div>
+
+    <div class="callout">
+      <p class="small" style="margin:0 0 10px 0;">
+        <strong>Optional electronic contributions:</strong> Venmo and Cash App donations may be used for convenience and are periodically
+        transferred into the trust account for cemetery maintenance and fence repair.
+      </p>
+
+      <div class="qr-wrap">
+        <div class="qr-card">
+          <img src="jen-venmo.png" alt="Venmo QR code for Jennifer Skinner">
+          <div class="qr-label">Venmo</div>
+          <div class="qr-handle">@Jennifer-Skinner-81</div>
+          <div class="qr-link">
+            <a href="https://venmo.com/Jennifer-Skinner-81" target="_blank" rel="noopener noreferrer">Open Venmo profile</a>
+          </div>
+        </div>
+
+        <div class="qr-card">
+          <img src="marty-cashapp.png" alt="Cash App QR code for Marty Skinner">
+          <div class="qr-label">Cash App</div>
+          <div class="qr-handle">$MtDewMarty</div>
+          <div class="qr-link">
+            <a href="https://cash.app/$MtDewMarty" target="_blank" rel="noopener noreferrer">Open Cash App</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Families Represented</h2>
+    <div class="callout">
+      <p style="margin:0;">
+        <strong>A partial list of surnames found in this cemetery includes:</strong>
+      </p>
+
+      <ul class="surname-list">
+        <li>Brock</li>
+        <li>Crawford</li>
+        <li>Denning</li>
+        <li>Dees</li>
+        <li>Devis</li>
+        <li>Dixon</li>
+        <li>Edgerton</li>
+        <li>Evans</li>
+        <li>Fields</li>
+        <li>Gilbreath</li>
+        <li>Heath</li>
+        <li>Hodgin</li>
+        <li>Hollowell</li>
+        <li>Hooks</li>
+        <li>Howell</li>
+        <li>Joyner</li>
+        <li>Laney</li>
+        <li>Langston</li>
+        <li>Lynch</li>
+        <li>Phillips</li>
+        <li>Pope</li>
+        <li>Thompson</li>
+        <li>Wilkins</li>
+        <li>Yelverton</li>
+        <li>Several Unknown</li>
+      </ul>
+
+      <p class="small" style="margin:12px 0 0 0;">
+        If you know additional family names associated with this cemetery, please email us so we can keep this list accurate over time.
+      </p>
+    </div>
+
+    <hr>
+
+    <h2>Original Documents (Informational Only)</h2>
+    <div class="callout">
+      <p style="margin:0 0 10px 0;">
+        The following original documents are shared for informational purposes related to the early beginnings of the cemetery and
+        known family members buried here. Please contact the caretakers/trustees if you can provide more information or wish to support
+        cemetery maintenance.
+      </p>
+
+      <ul class="doc-list">
+        <li><a href="Orignial-Deed-Edgerton-Cemetery.PDF">Original Deed</a></li>
+        <li><a href="Edgerton-Cemetery-name-list-1.PDF">Edgerton Cemetery Name List – Part 1</a></li>
+        <li><a href="Edgerton-Cemetery-name-list2.PDF">Edgerton Cemetery Name List – Part 2</a></li>
+      </ul>
+
+      <p class="small" style="margin:12px 0 0 0;">
+        <em>We know there are others buried here who were never documented.</em>
+      </p>
+    </div>
+
+    <p class="footer">
+      This website is provided for informational purposes only. Edgerton Cemetery is a private
+      family cemetery. Contributions are voluntary and intended solely for cemetery maintenance
+      and preservation.
+    </p>
+
+  </div>
 </body>
 </html>
