@@ -183,6 +183,17 @@
         columns: 1;
       }
     }
+
+    /* ✅ FIX: ensure anchor scroll doesn't hide section behind sticky banner */
+    #check-donation {
+      scroll-margin-top: 320px; /* banner + map bar height */
+    }
+
+    @media (max-width: 680px) {
+      #check-donation {
+        scroll-margin-top: 360px; /* a bit more room on mobile */
+      }
+    }
   </style>
 </head>
 
@@ -208,7 +219,7 @@
       <strong>Edgerton Cemetery Maintenance Trust</strong> to help with long-term upkeep of the family cemetery.
     </p>
 
-    <!-- CTA Button NOW jumps to CHECK donation callout -->
+    <!-- CTA Button: jumps to CHECK donation callout -->
     <a href="#check-donation" class="cta-button">
       Contribute to Maintenance and Fence Repair
     </a>
@@ -264,7 +275,7 @@
 
     <p>Contributions may be made by check payable to:</p>
 
-    <!-- CHECK donation callout anchor target -->
+    <!-- Anchor target -->
     <div class="callout" id="check-donation">
       <p style="margin:0;">
         <strong>Edgerton Cemetery Maintenance Trust</strong><br>
@@ -273,10 +284,10 @@
       </p>
     </div>
 
-    <!-- Electronic options restored -->
     <div class="callout">
       <p class="small" style="margin:0 0 10px 0;">
-        <strong>Optional electronic contributions:</strong> Venmo and Cash App donations may be used for convenience and are periodically transferred into the trust account for cemetery maintenance and fence repair.
+        <strong>Optional electronic contributions:</strong> Venmo and Cash App donations may be used for convenience and are periodically
+        transferred into the trust account for cemetery maintenance and fence repair.
       </p>
 
       <div class="qr-wrap">
