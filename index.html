@@ -24,25 +24,24 @@
     }
 
     body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.65;
-  background:
-    radial-gradient(
-      1200px 500px at 50% 0%,
-      rgba(109,40,217,0.35),
-      rgba(58,15,102,0.85) 60%
-    ),
-    linear-gradient(
-      180deg,
-      var(--purple-800),
-      var(--purple-700) 40%,
-      var(--purple-900) 100%
-    );
-  color: #222;
-  margin: 0;
-  padding: 0;
-}
-
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(
+          1200px 500px at 50% 0%,
+          rgba(109,40,217,0.35),
+          rgba(58,15,102,0.85) 60%
+        ),
+        linear-gradient(
+          180deg,
+          var(--purple-800),
+          var(--purple-700) 40%,
+          var(--purple-900) 100%
+        );
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
 
     .sticky-header {
       position: sticky;
@@ -165,16 +164,7 @@
       padding: 0 4px;
     }
 
-    .gene-photo{
-      width: 260px;
-      max-width: 85%;
-      border-radius: 16px;
-      border: 3px solid var(--purple-200);
-      box-shadow: 0 10px 24px rgba(27,5,51,0.18);
-      margin-top: 10px;
-    }
-
-    /* ✅ Mary photo matches Gene styling */
+    .gene-photo,
     .mary-photo{
       width: 260px;
       max-width: 85%;
@@ -248,6 +238,42 @@
       font-size: 0.95em;
       color: #555;
     }
+
+    /* About section (between Contact and Purpose) */
+    .about-grid{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .about-card{
+      background: #ffffff;
+      border: 1px solid var(--purple-200);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 8px 18px rgba(27,5,51,0.08);
+    }
+
+    .about-label{
+      font-weight: 900;
+      color: var(--purple-900);
+      font-size: 0.95em;
+      margin-bottom: 6px;
+    }
+
+    .about-text{
+      margin: 0;
+      color: #222;
+    }
+
+    .about-muted{
+      margin-top: 14px;
+    }
+
+    @media (max-width: 820px){
+      .about-grid{ grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
@@ -294,7 +320,6 @@
         And the late Mrs. Girney Edgerton — <span class="name-highlight">Mary</span>
       </p>
 
-      <!-- ✅ Mary photo added -->
       <img class="mary-photo" src="Big-Granny.jpg" alt="Mrs. Girney Edgerton (Mary)">
 
       <p class="small" style="margin:14px 0 0 0;">
@@ -313,31 +338,45 @@
 
     <hr>
 
-    <p>
-      Edgerton Cemetery is a multi-family cemetery located at
-      <strong>3061 Nahunta Rd Pikeville, NC (beside Nahunta Fire Department)</strong>.
+    <h2>About the Cemetery</h2>
+
+    <p style="margin-bottom:10px;">
+      Edgerton Cemetery is a private, multi-family cemetery cared for by family members across generations.
     </p>
 
-    <div class="callout">
-      <p class="small" style="margin:0;">
-        As of 2026, the cemetery is being cared for primarily by
-        <strong>Sonny Edgerton (Nahunta)</strong> with help from <strong>Jennifer Skinner (Kenly)</strong>.
-      </p>
+    <div class="about-grid">
+
+      <div class="about-card">
+        <div class="about-label">Location</div>
+        <p class="about-text">
+          <strong>3061 Nahunta Rd, Pikeville, NC</strong><br>
+          (beside the Nahunta Fire Department)
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-label">Current Care (as of 2026)</div>
+        <p class="about-text">
+          <strong>Sonny Edgerton (Nahunta)</strong><br>
+          with help from <strong>Jennifer Skinner (Kenly)</strong>
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-label">Established</div>
+        <p class="about-text">
+          Deed dated <strong>March 21, 1938</strong><br>
+          Trustees: <strong>Cassie E. Lynch, Floyd Edgerton, Girney Edgerton</strong>
+        </p>
+      </div>
+
     </div>
 
-    <div class="callout">
+    <div class="callout about-muted">
       <p class="small" style="margin:0;">
-        The cemetery was formally established through a deed dated <strong>March 21, 1938</strong>,
-        in which <strong>W. F. Flowers (widower)</strong> conveyed land to
-        <strong>Cassie E. Lynch, Floyd Edgerton, and Girney Edgerton</strong>, who were named as
-        <strong>Trustees of the Edgerton Burial Ground</strong>.
+        The cemetery contains approximately <strong>150</strong> burials. We also know there are others buried here who were never documented.
       </p>
     </div>
-
-    <p>
-      This cemetery contains approximately
-      <strong>150</strong> burials and has been cared for by family members across generations.
-    </p>
 
     <hr>
 
